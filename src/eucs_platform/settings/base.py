@@ -109,7 +109,7 @@ if env_file.exists():
 SECRET_KEY = env("SECRET_KEY", default="CHANGEME!!!")
 PLATFORM_NAME = env("PLATFORM_NAME", default="EuCitizenScience")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['57.129.71.43', 'localhost']
 
 # Application definition
 
@@ -140,7 +140,7 @@ INSTALLED_APPS = (
     "authors",
     "contact",
     "reviews",
-    #'ecsa_integration',
+    'ecsa_integration',
     'django.contrib.sites',
     'cookielaw',
     'events',
@@ -181,6 +181,11 @@ INSTALLED_APPS = (
     'django_ckeditor_5',
     'fontawesomefree',
 
+    # Matas
+    # Integration:
+    'inline_actions',
+    'sendfile',
+    'paypal.standard.ipn',
 
 )
 
@@ -576,3 +581,11 @@ GRAPH_MODELS = {
 if platform.system() == 'Darwin':
     GDAL_LIBRARY_PATH = '/opt/homebrew/opt/gdal/lib/libgdal.dylib'
     GEOS_LIBRARY_PATH = '/opt/homebrew/opt/geos/lib/libgeos_c.dylib'
+
+# Matas
+# ---- Paypal settings ----
+PAYPAL_TEST = True
+#PAYPAL_RECEIVER_EMAIL = env("PAYPAL_RECEIVER_EMAIL", default="")
+PAYPAL_RECEIVER_EMAIL = 'buisiness@ecsa.de'
+PAYPAL_CLIENT_ID = env("PAYPAL_CLIENT_ID", default="")
+PAYPAL_SECRET = env("PAYPAL_SECRET", default="")
