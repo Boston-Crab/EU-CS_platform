@@ -67,6 +67,8 @@
                     Submissions</a>
                 {% endif %}
                 {% if editable %}
+                <!-- Matas -->
+                {% include "ecsa_integration_user_panel.html" %}
                 <a href="/users/me/bookmarks"
                     class="list-group-item list-group-item-action {% if request.path == '/users/me/bookmarks' %}active{% endif %}">
                     <i class="fas fa-book"></i>
@@ -79,11 +81,11 @@
                     class="list-group-item list-group-item-action {% if request.path == '/users/me/edit/' %}active{% endif %}">
                     <i class="fas fa-edit"></i>
                     Edit profile</a>
-                {% endif %} 
                 <a href="{% url 'accounts:delete_account' %}" class="list-group-item list-group-item-action text-danger">
                     <i class="fas fa-trash-alt"></i>
                     Delete account
                 </a>
+                {% endif %} 
             </div>
         </div>
         <div class="col-9">
