@@ -15,7 +15,8 @@
                     <h3 class="project-name text-dark ms-3 mb-2">
                         <a href="/organisation/{{organisation.id }}" class="card-title text-dark">{{ organisation.name | truncatechars:54 }}</a>
                     </h3>
-                    {% if organisation.ecsaMember %}
+                    <!-- Matas -->
+                    {% if organisation.ecsa_organisation.ecsaMember %}
                     <div class="ecsa-badge">
                         <img class="ecsa-badge-img" 
                             data-bs-toggle="tooltip"
